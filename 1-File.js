@@ -51,4 +51,62 @@ const reverse = function (x) {
 	if (res2 > Math.pow(-2, 31) && res2 < Math.pow(2, 31) - 1) return res2;
 	else return 0;
 };
-console.log(reverse(-120));
+
+/////////////////////////////////////////////////////////////////////////////
+
+// Integer to roman
+// Question 12
+// I    1
+// V    5
+// X    10
+// L    50
+// C    100
+// D    500
+// M    1000
+
+var intToRoman = function (num) {
+	const rules = {
+		I: 1,
+		V: 5,
+		X: 10,
+		L: 50,
+		C: 100,
+		D: 500,
+		M: 1000,
+	};
+	const a = Object.entries(rules);
+	let roman = '';
+
+	for (let i = a.length - 1; i >= 0; i--) {
+		if (num >= a[i][1]) {
+			// console.log('found the starting point ' + a[i]);
+			// break;
+			const value = a[[i][0]][1];
+			console.log(value);
+			if (num === a[i][1]) {
+				// look at this
+				return Object.keys(rules).find(key => rules[key] === value);
+			} else {
+				// worst approach ig
+				// subtract value from num and mvoe up from the rules
+				num -= value;
+				console.log(num);
+
+				// 90 - 50 === 40  ( print 50's L)
+				//		 40 - 50 < 0 so, move ahead
+				// 40 - 10 === 30 ( print 10's X)
+				// 		 30  - 10 > 0 continue
+				// 30 - 10 === 20 ( print 10's X)
+				// 		 20  - 10 > 0 continue
+				// 20 - 10 === 10 ( print 10's X)
+				// 		 10  - 10 = 0 continue --> now it == 0 so stop
+
+				// 30 -
+			}
+		}
+	}
+};
+console.log(intToRoman(90));
+
+// ! part 2
+// how can i get 90 from here.
