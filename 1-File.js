@@ -18,7 +18,7 @@ const twoSum = function (nums, target) {
 
 /////////////////////////////////////////////////////////////////////////////
 
-//Question 7 ( Reverse an integer )
+// Question 7 ( Reverse an integer )
 // 321  --> 123
 // -123  --> -321
 // 120  --> 21
@@ -48,6 +48,7 @@ const reverse = function (x) {
 	for (let i = 0; i < res.length; i++) {
 		res2 += res[i];
 	}
-	return res2;
+	if (res2 > Math.pow(-2, 31) && res2 < Math.pow(2, 31) - 1) return res2;
+	else return 0;
 };
 console.log(reverse(-120));
