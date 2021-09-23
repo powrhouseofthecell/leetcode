@@ -66,47 +66,29 @@ const reverse = function (x) {
 
 var intToRoman = function (num) {
 	const rules = {
-		I: 1,
-		V: 5,
-		X: 10,
-		L: 50,
-		C: 100,
-		D: 500,
-		M: 1000,
+		1: 'I',
+		5: 'V',
+		10: 'X',
+		50: 'L',
+		100: 'C',
+		500: 'D',
+		1000: 'M',
 	};
-	const a = Object.entries(rules);
-	let roman = '';
 
-	for (let i = a.length - 1; i >= 0; i--) {
-		if (num >= a[i][1]) {
-			// console.log('found the starting point ' + a[i]);
-			// break;
-			const value = a[[i][0]][1];
-			console.log(value);
-			if (num === a[i][1]) {
-				// look at this
-				return Object.keys(rules).find(key => rules[key] === value);
-			} else {
-				// worst approach ig
-				// subtract value from num and mvoe up from the rules
-				num -= value;
-				console.log(num);
-
-				// 90 - 50 === 40  ( print 50's L)
-				//		 40 - 50 < 0 so, move ahead
-				// 40 - 10 === 30 ( print 10's X)
-				// 		 30  - 10 > 0 continue
-				// 30 - 10 === 20 ( print 10's X)
-				// 		 20  - 10 > 0 continue
-				// 20 - 10 === 10 ( print 10's X)
-				// 		 10  - 10 = 0 continue --> now it == 0 so stop
-
-				// 30 -
-			}
-		}
+	const arr = Object.keys(rules);
+	console.log(arr);
+	let i = 0;
+	while (arr[i] < num) {
+		i++;
 	}
-};
-console.log(intToRoman(90));
+	const idxNext = i;
+	console.log(idxNext);
+	console.log(arr[idxNext], arr[idxNext] - num);
+	const roman = [arr[idxNext], arr[idxNext] - num];
+	console.log(roman);
+	console.log(rules[roman[0]], rules[1]);
 
-// ! part 2
-// how can i get 90 from here.
+	// let res = arr[idxNext] - arr[idxNext] - 100;
+	// console.log(Math.abs(res));
+};
+console.log(intToRoman(900));
