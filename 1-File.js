@@ -74,5 +74,16 @@ var intToRoman = function (num) {
 		500: 'D',
 		1000: 'M',
 	};
+
+	const rulesArray = Object.keys(rules).reverse();
+
+	console.log(rulesArray);
+	let i = 0;
+	while (num < rulesArray[i]) {
+		i++;
+	}
+	// console.log(i);
+	const arrayOfValues = rulesArray.slice(i);
+	console.log(arrayOfValues);
 };
-console.log(intToRoman(6));
+console.log(intToRoman(11));
