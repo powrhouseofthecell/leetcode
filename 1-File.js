@@ -85,5 +85,12 @@ var intToRoman = function (num) {
 	// console.log(i);
 	const arrayOfValues = rulesArray.slice(i);
 	console.log(arrayOfValues);
+
+	for (let i = 0; i < arrayOfValues.length; i++) {
+		// if the num is directly the value in the rulesArray
+		if (num - arrayOfValues[i] === 0) {
+			console.log(rules[arrayOfValues[i]]);
+		}
+	}
 };
-console.log(intToRoman(11));
+console.log(intToRoman(1));
