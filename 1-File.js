@@ -74,21 +74,5 @@ var intToRoman = function (num) {
 		500: 'D',
 		1000: 'M',
 	};
-
-	const arr = Object.keys(rules);
-	console.log(arr);
-	let i = 0;
-	while (arr[i] < num) {
-		i++;
-	}
-	const idxNext = i;
-	console.log(idxNext);
-	console.log(arr[idxNext], arr[idxNext] - num);
-	const roman = [arr[idxNext], arr[idxNext] - num];
-	console.log(roman);
-	console.log(rules[roman[0]], rules[1]);
-
-	// let res = arr[idxNext] - arr[idxNext] - 100;
-	// console.log(Math.abs(res));
 };
-console.log(intToRoman(900));
+console.log(intToRoman(6));
