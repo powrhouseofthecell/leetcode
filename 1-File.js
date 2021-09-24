@@ -64,7 +64,7 @@ const reverse = function (x) {
 // D    500
 // M    1000
 
-var intToRoman = function (num) {
+const intToRoman = function (num) {
 	const rules = {
 		1: 'I',
 		5: 'V',
@@ -83,14 +83,23 @@ var intToRoman = function (num) {
 		i++;
 	}
 	// console.log(i);
+	const resArray = [];
 	const arrayOfValues = rulesArray.slice(i);
 	console.log(arrayOfValues);
-
+	let newNum;
 	for (let i = 0; i < arrayOfValues.length; i++) {
-		// if the num is directly the value in the rulesArray
-		if (num - arrayOfValues[i] === 0) {
-			console.log(rules[arrayOfValues[i]]);
+		// how can i say that 10 will go into 13 1x and 3 will be a remainder (for 13)
+
+		if (num >= arrayOfValues[i]) {
+			newNum = num % arrayOfValues[i];
+			resArray.push(num - newNum);
+			num = newNum;
+			// newNum = 9, resArray = [10, ], num = 9
+			// newNum = 4, resArray = [10, 5], num = 4
+			// newNum = 0, resArray = [10, 5, 4], num = 0
 		}
 	}
+	console.log(resArray);
 };
-console.log(intToRoman(1));
+console.log(intToRoman(53));
+console.log(4 % 1);
