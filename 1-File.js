@@ -32,8 +32,8 @@ const reverse = function (x) {
 
   let res = [];
 
-  if (arr[0] === "-") {
-    res.push("-");
+  if (arr[0] === '-') {
+    res.push('-');
     for (let i = arr.length - 1; i > 0; i--) {
       res.push(arr[i]);
     }
@@ -44,7 +44,7 @@ const reverse = function (x) {
   }
   // console.log(res);
   // convert string items in the array to numbers
-  let res2 = "";
+  let res2 = '';
   for (let i = 0; i < res.length; i++) {
     res2 += res[i];
   }
@@ -66,13 +66,13 @@ const reverse = function (x) {
 
 const intToRoman = function (num) {
   const rules = {
-    1: "I",
-    5: "V",
-    10: "X",
-    50: "L",
-    100: "C",
-    500: "D",
-    1000: "M",
+    1: 'I',
+    5: 'V',
+    10: 'X',
+    50: 'L',
+    100: 'C',
+    500: 'D',
+    1000: 'M',
   };
 
   const rulesArray = Object.keys(rules).reverse();
