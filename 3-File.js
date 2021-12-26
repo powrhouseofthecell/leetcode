@@ -5,8 +5,8 @@ const maxDepth = function (root) {
   const r = maxDepth(root.right);
   return 1 + Math.max(l, r);
 };
-// Sorted array to BST
 
+// Sorted array to BST
 const sortedListToBST = function (head) {
   const buildBST = (nums, start, end) => {
     if (start > end) return null;
