@@ -1,4 +1,4 @@
-const twoSumOP = (nums: number[], target: number) => {
+const twoSum = (nums: number[], target: number) => {
   const hashTable = {};
   for (let i = 0; i < nums.length; i++) {
     if (hashTable[target - nums[i]] != undefined) {
@@ -8,4 +8,4 @@ const twoSumOP = (nums: number[], target: number) => {
   }
 };
 
-console.log(twoSumOP([4, 22, 3, 2], 7));
+console.log(twoSum([4, 22, 3, 2], 7));
